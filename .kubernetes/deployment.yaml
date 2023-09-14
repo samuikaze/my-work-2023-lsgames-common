@@ -2,23 +2,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: <APPLICATION_NAME>
+  name: lsgames-common-backend
   labels:
-    app: <APPLICATION_NAME>
-  namespace: <NAMESPACE>
+    app: lsgames-common-backend
+  namespace: smkz-for-work
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: <APPLICATION_NAME>
+      app: lsgames-common-backend
   template:
     metadata:
       labels:
-        app: <APPLICATION_NAME>
+        app: lsgames-common-backend
     spec:
       containers:
-        - name: <APPLICATION_NAME>
-          image: $secrets.REGISTRY_URL/<APPLICATION_NAME>:latest
+        - name: lsgames-common-backend
+          image: $secrets.REGISTRY_URL/lsgames-common-backend:latest
           resources:
             requests:
               memory: 512Mi
@@ -30,38 +30,43 @@ spec:
             - containerPort: 80
               protocol: TCP
           env:
-            - name: ConnectionStrings__Weathers
+            - name: ConnectionStrings__LSCommons
               valueFrom:
                 secretKeyRef:
-                  name: <SECRET_NAME>
+                  name: lsgames-common-secrets
                   key: database.host
-            - name: Credentials__Weathers__Username
+            - name: Credentials__LSCommons__Username
               valueFrom:
                 secretKeyRef:
-                  name: <SECRET_NAME>
+                  name: lsgames-common-secrets
                   key: database.username
-            - name: Credentials__Weathers__Password
+            - name: Credentials__LSCommons__Password
               valueFrom:
                 secretKeyRef:
-                  name: <SECRET_NAME>
+                  name: lsgames-common-secrets
                   key: database.password
             - name: Swagger__RoutePrefix
               valueFrom:
                 configMapKeyRef:
-                  name: <CONFIG_MAP_NAME>
+                  name: lsgames-common-configs
                   key: swagger.route.prefix
+            - name: Services__SingleSignOn
+              valueFrom:
+                configMapKeyRef:
+                  name: lsgames-common-configs
+                  key: services.singlesignon
 
 ---
 # service.yaml
 apiVersion: v1
 kind: Service
 metadata:
-  name: <APPLICATION_NAME>
-  namespace: <NAMESPACE>
+  name: lsgames-common-backend
+  namespace: smkz-for-work
 spec:
   type: ClusterIP
   selector:
-    app: <APPLICATION_NAME>
+    app: lsgames-common-backend
   ports:
     - protocol: TCP
       port: 80
