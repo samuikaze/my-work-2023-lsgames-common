@@ -1,0 +1,1135 @@
+{
+  "canvas": {
+    "version": "2.2.11",
+    "width": 2000,
+    "height": 2000,
+    "scrollTop": -318,
+    "scrollLeft": -35,
+    "zoomLevel": 0.9,
+    "show": {
+      "tableComment": true,
+      "columnComment": true,
+      "columnDataType": true,
+      "columnDefault": true,
+      "columnAutoIncrement": true,
+      "columnPrimaryKey": true,
+      "columnUnique": true,
+      "columnNotNull": true,
+      "relationship": true
+    },
+    "database": "MariaDB",
+    "databaseName": "lsgames_commons",
+    "canvasType": "ERD",
+    "language": "GraphQL",
+    "tableCase": "pascalCase",
+    "columnCase": "camelCase",
+    "highlightTheme": "VS2015",
+    "bracketType": "none",
+    "setting": {
+      "relationshipDataTypeSync": true,
+      "relationshipOptimization": false,
+      "columnOrder": [
+        "columnName",
+        "columnDataType",
+        "columnNotNull",
+        "columnUnique",
+        "columnAutoIncrement",
+        "columnDefault",
+        "columnComment"
+      ]
+    },
+    "pluginSerializationMap": {}
+  },
+  "table": {
+    "tables": [
+      {
+        "name": "news",
+        "comment": "最新消息",
+        "columns": [
+          {
+            "name": "news_id",
+            "comment": "最新消息 PK",
+            "dataType": "BIGINT(11)",
+            "default": "",
+            "option": {
+              "autoIncrement": true,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 73.14453125,
+              "widthDataType": 68.1552734375,
+              "widthDefault": 60
+            },
+            "id": "d432e4cd-b190-4163-b6e0-cd04098d513d"
+          },
+          {
+            "name": "news_type_id",
+            "comment": "最新消息種類 PK",
+            "dataType": "BIGINT(11)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 83.50390625,
+              "widthComment": 99.14453125,
+              "widthDataType": 68.1552734375,
+              "widthDefault": 60
+            },
+            "id": "473a5424-347f-4777-ad89-e41a7431ae2b"
+          },
+          {
+            "name": "news_title",
+            "comment": "最新消息標題",
+            "dataType": "VARCHAR(20)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 62.56298828125,
+              "widthComment": 80,
+              "widthDataType": 86.3984375,
+              "widthDefault": 60
+            },
+            "id": "82218d88-717a-496e-b6f4-0b91fdc418d7"
+          },
+          {
+            "name": "news_content",
+            "comment": "最新消息內容",
+            "dataType": "VARCHAR(1024)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 86.20166015625,
+              "widthComment": 80,
+              "widthDataType": 101.4677734375,
+              "widthDefault": 60
+            },
+            "id": "efdc5247-1da7-4b6e-938b-a0c543d71e83"
+          },
+          {
+            "name": "created_user_id",
+            "comment": "建立帳號 PK",
+            "dataType": "BIGINT(11)",
+            "default": "NULL",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 96.9990234375,
+              "widthComment": 73.14453125,
+              "widthDataType": 68.1552734375,
+              "widthDefault": 60
+            },
+            "id": "cfd12503-c62d-4949-b985-b4bb1abcf7e4"
+          },
+          {
+            "name": "created_at",
+            "comment": "建立時間",
+            "dataType": "DATETIME",
+            "default": "NULL",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 65.39404296875,
+              "widthComment": 60,
+              "widthDataType": 64.60693359375,
+              "widthDefault": 60
+            },
+            "id": "6e246704-8735-4d01-ad2f-d56c0f0f21b1"
+          },
+          {
+            "name": "updated_user_id",
+            "comment": "最後更新帳號 PK",
+            "dataType": "BIGINT(11)",
+            "default": "NULL",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 102.92138671875,
+              "widthComment": 99.14453125,
+              "widthDataType": 68.1552734375,
+              "widthDefault": 60
+            },
+            "id": "b1161630-b974-4e51-8150-853ddea68364"
+          },
+          {
+            "name": "updated_at",
+            "comment": "最後更新時間",
+            "dataType": "DATETIME",
+            "default": "NULL",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 71.31640625,
+              "widthComment": 80,
+              "widthDataType": 64.60693359375,
+              "widthDefault": 60
+            },
+            "id": "237fb153-4469-4555-89a7-e967a4142031"
+          },
+          {
+            "name": "deleted_user_id",
+            "comment": "刪除帳號 PK",
+            "dataType": "BIGINT(11)",
+            "default": "NULL",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 97.697265625,
+              "widthComment": 73.14453125,
+              "widthDataType": 68.1552734375,
+              "widthDefault": 60
+            },
+            "id": "0f28a8cc-94d1-47aa-b258-eb6876e1f668"
+          },
+          {
+            "name": "deleted_at",
+            "comment": "刪除時間",
+            "dataType": "DATETIME",
+            "default": "NULL",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 66.09228515625,
+              "widthComment": 60,
+              "widthDataType": 64.60693359375,
+              "widthDefault": 60
+            },
+            "id": "901d45cc-8c1e-4818-b2a1-de82a326ce11"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 55,
+          "top": 47,
+          "zIndex": 1,
+          "widthName": 60,
+          "widthComment": 60,
+          "color": "#FFC107"
+        },
+        "visible": true,
+        "id": "a6c5fb66-a875-4be9-9dd6-4d6a26a02531"
+      },
+      {
+        "name": "news_types",
+        "comment": "最新消息種類",
+        "columns": [
+          {
+            "name": "news_type_id",
+            "comment": "最新消息種類 PK",
+            "dataType": "BIGINT(11)",
+            "default": "",
+            "option": {
+              "autoIncrement": true,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 83.50390625,
+              "widthComment": 99.14453125,
+              "widthDataType": 68.1552734375,
+              "widthDefault": 60
+            },
+            "id": "1a8b331c-2d0b-4604-81f9-623d2f836acd"
+          },
+          {
+            "name": "name",
+            "comment": "最新消息種類名稱",
+            "dataType": "VARCHAR(10)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 106,
+              "widthDataType": 86.3984375,
+              "widthDefault": 60
+            },
+            "id": "11a59a60-b4f9-4a3b-9c4a-dc344188b553"
+          },
+          {
+            "name": "created_user_id",
+            "comment": "建立帳號 PK",
+            "dataType": "BIGINT(11)",
+            "default": "NULL",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 96.9990234375,
+              "widthComment": 73.14453125,
+              "widthDataType": 68.1552734375,
+              "widthDefault": 60
+            },
+            "id": "3e3530de-026c-4434-af9e-1164518ecc37"
+          },
+          {
+            "name": "created_at",
+            "comment": "建立時間",
+            "dataType": "DATETIME",
+            "default": "NULL",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 65.39404296875,
+              "widthComment": 60,
+              "widthDataType": 64.60693359375,
+              "widthDefault": 60
+            },
+            "id": "b6d16bd8-dc2e-4ee2-9542-82ec89b1b4e1"
+          },
+          {
+            "name": "updated_user_id",
+            "comment": "最後更新帳號 PK",
+            "dataType": "BIGINT(11)",
+            "default": "NULL",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 102.92138671875,
+              "widthComment": 99.14453125,
+              "widthDataType": 68.1552734375,
+              "widthDefault": 60
+            },
+            "id": "47a60059-a524-4109-b044-83ce855fc0ba"
+          },
+          {
+            "name": "updated_at",
+            "comment": "最後更新時間",
+            "dataType": "DATETIME",
+            "default": "NULL",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 71.31640625,
+              "widthComment": 80,
+              "widthDataType": 64.60693359375,
+              "widthDefault": 60
+            },
+            "id": "e01646cd-8d1f-4385-8cc7-4dc876a1831b"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 685,
+          "top": 37,
+          "zIndex": 2,
+          "widthName": 71.99560546875,
+          "widthComment": 80,
+          "color": "#FFC107"
+        },
+        "visible": true,
+        "id": "1e40076a-d098-4e0a-9506-36832fa5647e"
+      },
+      {
+        "name": "products",
+        "comment": "作品一覽",
+        "columns": [
+          {
+            "name": "product_id",
+            "comment": "作品 PK",
+            "dataType": "BIGINT(11)",
+            "default": "",
+            "option": {
+              "autoIncrement": true,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 67.84423828125,
+              "widthComment": 60,
+              "widthDataType": 68.1552734375,
+              "widthDefault": 60
+            },
+            "id": "4946a621-de63-4c64-959f-2f4e984a242f"
+          },
+          {
+            "name": "product_title",
+            "comment": "作品名稱",
+            "dataType": "VARCHAR(64)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 79.7333984375,
+              "widthComment": 60,
+              "widthDataType": 86.3984375,
+              "widthDefault": 60
+            },
+            "id": "e36f8aa1-3919-4a82-868c-af4215de603c"
+          },
+          {
+            "name": "visual_image",
+            "comment": "作品視覺圖",
+            "dataType": "VARCHAR(96)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 80.279296875,
+              "widthComment": 67,
+              "widthDataType": 86.3984375,
+              "widthDefault": 60
+            },
+            "id": "96fa879a-7812-452c-851e-71c9f7bc641c"
+          },
+          {
+            "name": "description",
+            "comment": "作品說明",
+            "dataType": "VARCHAR(1024)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 70.58642578125,
+              "widthComment": 60,
+              "widthDataType": 101.4677734375,
+              "widthDefault": 60
+            },
+            "id": "97950cc7-3eb9-4e58-bdc6-aa48a2ba9a3c"
+          },
+          {
+            "name": "product_url",
+            "comment": "作品連結",
+            "dataType": "VARCHAR(1024)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 72.35107421875,
+              "widthComment": 60,
+              "widthDataType": 101.4677734375,
+              "widthDefault": 60
+            },
+            "id": "9d849d11-392c-4015-ae01-52f979169996"
+          },
+          {
+            "name": "product_type_id",
+            "comment": "作品分類 PK",
+            "dataType": "BIGINT(11)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 100.67431640625,
+              "widthComment": 73.14453125,
+              "widthDataType": 68.1552734375,
+              "widthDefault": 60
+            },
+            "id": "e033cb7a-2d07-4df0-95ab-349dce1c8b2b"
+          },
+          {
+            "name": "release_date",
+            "comment": "作品釋出日期",
+            "dataType": "DATETIME",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 78.1591796875,
+              "widthComment": 80,
+              "widthDataType": 64.60693359375,
+              "widthDefault": 60
+            },
+            "id": "12441f57-8554-440d-8906-3b312978a46c"
+          },
+          {
+            "name": "created_at",
+            "comment": "作品建立時間",
+            "dataType": "DATETIME",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 65.39404296875,
+              "widthComment": 80,
+              "widthDataType": 64.60693359375,
+              "widthDefault": 60
+            },
+            "id": "0ebaaa96-f30a-4537-a357-4ea9c1bd3062"
+          },
+          {
+            "name": "updated_at",
+            "comment": "作品最後更新時間",
+            "dataType": "DATETIME",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 71.31640625,
+              "widthComment": 106,
+              "widthDataType": 64.60693359375,
+              "widthDefault": 60
+            },
+            "id": "da01e542-f500-4e2d-a726-fda6f0d1e532"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 52,
+          "top": 367,
+          "zIndex": 24,
+          "widthName": 60,
+          "widthComment": 60,
+          "color": "#2196F3"
+        },
+        "visible": true,
+        "id": "f3463b77-52bb-4012-8068-bc2e30d25385"
+      },
+      {
+        "name": "product_types",
+        "comment": "作品分類",
+        "columns": [
+          {
+            "name": "product_type_id",
+            "comment": "作品分類 PK",
+            "dataType": "BIGINT(11)",
+            "default": "",
+            "option": {
+              "autoIncrement": true,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 100.67431640625,
+              "widthComment": 73.14453125,
+              "widthDataType": 68.1552734375,
+              "widthDefault": 60
+            },
+            "id": "29559845-c456-446d-ad38-cda6141c1108"
+          },
+          {
+            "name": "product_type_name",
+            "comment": "作品分類名稱",
+            "dataType": "VARCHAR(32)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 123.4560546875,
+              "widthComment": 80,
+              "widthDataType": 86.3984375,
+              "widthDefault": 60
+            },
+            "id": "5316720d-1361-4e9f-8bed-177e24fd3c21"
+          },
+          {
+            "name": "created_at",
+            "comment": "作品分類建立時間",
+            "dataType": "DATETIME",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 65.39404296875,
+              "widthComment": 106,
+              "widthDataType": 64.60693359375,
+              "widthDefault": 60
+            },
+            "id": "0a2d63d8-dde8-4d20-ab25-ccb0d37ab3cb"
+          },
+          {
+            "name": "updated_at",
+            "comment": "作品分類最後更新時間",
+            "dataType": "DATETIME",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 71.31640625,
+              "widthComment": 120,
+              "widthDataType": 64.60693359375,
+              "widthDefault": 60
+            },
+            "id": "2aef82ac-e32b-4bc2-a420-a7cde0f9615c"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 688,
+          "top": 379,
+          "zIndex": 4,
+          "widthName": 89.166015625,
+          "widthComment": 60,
+          "color": "#2196F3"
+        },
+        "visible": true,
+        "id": "13c02abd-3833-4116-90ae-c52f195e82f3"
+      },
+      {
+        "name": "product_platforms",
+        "comment": "作品平台",
+        "columns": [
+          {
+            "name": "product_platform_id",
+            "comment": "作品平台 PK",
+            "dataType": "BIGINT(11)",
+            "default": "",
+            "option": {
+              "autoIncrement": true,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 126.4775390625,
+              "widthComment": 73.14453125,
+              "widthDataType": 68.1552734375,
+              "widthDefault": 60
+            },
+            "id": "b8a0f790-1185-46fc-a3e1-5b18b1600223"
+          },
+          {
+            "name": "product_platform_name",
+            "comment": "作品平台名稱",
+            "dataType": "VARCHAR(32)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 149.25927734375,
+              "widthComment": 80,
+              "widthDataType": 86.3984375,
+              "widthDefault": 60
+            },
+            "id": "a5218b2a-7529-40d8-b6e7-7c9fc954ced7"
+          },
+          {
+            "name": "created_at",
+            "comment": "建立時間",
+            "dataType": "DATETIME",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 65.39404296875,
+              "widthComment": 60,
+              "widthDataType": 64.60693359375,
+              "widthDefault": 60
+            },
+            "id": "6fc7690f-ddfc-478a-9359-2f620db0be4f"
+          },
+          {
+            "name": "updated_at",
+            "comment": "最後更新時間",
+            "dataType": "DATETIME",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 71.31640625,
+              "widthComment": 80,
+              "widthDataType": 64.60693359375,
+              "widthDefault": 60
+            },
+            "id": "35734d35-5919-40d6-b275-13e0967fbba4"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 8.8895,
+          "top": 710.1103,
+          "zIndex": 33,
+          "widthName": 114.96923828125,
+          "widthComment": 60,
+          "color": "#2196F3"
+        },
+        "visible": true,
+        "id": "9425b099-a7f0-4910-b209-cf71d4d7e6e3"
+      },
+      {
+        "name": "product_platform_mapper",
+        "comment": "作品與平台",
+        "columns": [
+          {
+            "name": "product_platform_mapper_id",
+            "comment": "作品與平台 PK",
+            "dataType": "BIGINT(11)",
+            "default": "",
+            "option": {
+              "autoIncrement": true,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 180.064453125,
+              "widthComment": 86.14453125,
+              "widthDataType": 68.1552734375,
+              "widthDefault": 60
+            },
+            "id": "9133eaa6-cd2a-48a1-8b67-30e27ade47d5"
+          },
+          {
+            "name": "product_id",
+            "comment": "作品 PK",
+            "dataType": "BIGINT(11)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 67.84423828125,
+              "widthComment": 60,
+              "widthDataType": 68.1552734375,
+              "widthDefault": 60
+            },
+            "id": "b25b7249-24a6-4f29-a73f-31ad436cab2a"
+          },
+          {
+            "name": "product_platform_id",
+            "comment": "作品平台 PK",
+            "dataType": "BIGINT(11)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 126.4775390625,
+              "widthComment": 73.14453125,
+              "widthDataType": 68.1552734375,
+              "widthDefault": 60
+            },
+            "id": "6b4ccaa2-380d-4fba-be65-044267503563"
+          },
+          {
+            "name": "created_at",
+            "comment": "建立時間",
+            "dataType": "DATETIME",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 65.39404296875,
+              "widthComment": 60,
+              "widthDataType": 64.60693359375,
+              "widthDefault": 60
+            },
+            "id": "e8013e5d-e970-4a3b-b778-b3c8ce6f9bf1"
+          },
+          {
+            "name": "updated_at",
+            "comment": "最後更新時間",
+            "dataType": "DATETIME",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 71.31640625,
+              "widthComment": 80,
+              "widthDataType": 64.60693359375,
+              "widthDefault": 60
+            },
+            "id": "74594b59-8588-4342-8dc3-df45df8f801d"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 716.6665,
+          "top": 592.3336,
+          "zIndex": 34,
+          "widthName": 162.62744140625,
+          "widthComment": 67,
+          "color": "#2196F3"
+        },
+        "visible": true,
+        "id": "039265bb-ef28-4de7-9410-86ba444c3794"
+      }
+    ],
+    "indexes": []
+  },
+  "memo": {
+    "memos": []
+  },
+  "relationship": {
+    "relationships": [
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "1e40076a-d098-4e0a-9506-36832fa5647e",
+          "columnIds": [
+            "1a8b331c-2d0b-4604-81f9-623d2f836acd"
+          ],
+          "x": 685,
+          "y": 133,
+          "direction": "left"
+        },
+        "end": {
+          "tableId": "a6c5fb66-a875-4be9-9dd6-4d6a26a02531",
+          "columnIds": [
+            "473a5424-347f-4777-ad89-e41a7431ae2b"
+          ],
+          "x": 572.53369140625,
+          "y": 184,
+          "direction": "right"
+        },
+        "constraintName": "fk_news_types_to_news",
+        "visible": true,
+        "id": "fbc343d7-4c56-43ab-9f1f-b49fd6da5189"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneOnly",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "13c02abd-3833-4116-90ae-c52f195e82f3",
+          "columnIds": [
+            "29559845-c456-446d-ad38-cda6141c1108"
+          ],
+          "x": 688,
+          "y": 454.5,
+          "direction": "left"
+        },
+        "end": {
+          "tableId": "f3463b77-52bb-4012-8068-bc2e30d25385",
+          "columnIds": [
+            "e033cb7a-2d07-4df0-95ab-349dce1c8b2b"
+          ],
+          "x": 574.14208984375,
+          "y": 430.375,
+          "direction": "right"
+        },
+        "constraintName": "fk_product_types_to_products",
+        "visible": true,
+        "id": "02b85328-1500-493d-b73b-d155835d1004"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "f3463b77-52bb-4012-8068-bc2e30d25385",
+          "columnIds": [
+            "4946a621-de63-4c64-959f-2f4e984a242f"
+          ],
+          "x": 574.14208984375,
+          "y": 557.125,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "039265bb-ef28-4de7-9410-86ba444c3794",
+          "columnIds": [
+            "b25b7249-24a6-4f29-a73f-31ad436cab2a"
+          ],
+          "x": 716.6665,
+          "y": 635.2086,
+          "direction": "left"
+        },
+        "constraintName": "fk_products_to_product_platform_mapper",
+        "visible": true,
+        "id": "1c62ee85-f9ae-4a3c-bd4c-58f578d88b97"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "9425b099-a7f0-4910-b209-cf71d4d7e6e3",
+          "columnIds": [
+            "b8a0f790-1185-46fc-a3e1-5b18b1600223"
+          ],
+          "x": 538.54721484375,
+          "y": 785.6103,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "039265bb-ef28-4de7-9410-86ba444c3794",
+          "columnIds": [
+            "6b4ccaa2-380d-4fba-be65-044267503563"
+          ],
+          "x": 716.6665,
+          "y": 720.9586,
+          "direction": "left"
+        },
+        "constraintName": "fk_product_platforms_to_product_platform_mapper",
+        "visible": true,
+        "id": "29711382-329c-4b3f-9757-f6784265303a"
+      }
+    ]
+  }
+}
