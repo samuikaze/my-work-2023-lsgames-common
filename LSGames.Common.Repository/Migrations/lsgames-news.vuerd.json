@@ -19,7 +19,7 @@
     },
     "database": "MariaDB",
     "databaseName": "lsgames_commons",
-    "canvasType": "ERD",
+    "canvasType": "@vuerd/builtin-sql-ddl",
     "language": "GraphQL",
     "tableCase": "pascalCase",
     "columnCase": "camelCase",
@@ -660,7 +660,7 @@
           "active": false,
           "left": 52,
           "top": 367,
-          "zIndex": 24,
+          "zIndex": 4,
           "widthName": 60,
           "widthComment": 60,
           "color": "#2196F3"
@@ -769,7 +769,7 @@
           "active": false,
           "left": 688,
           "top": 379,
-          "zIndex": 4,
+          "zIndex": 3,
           "widthName": 89.166015625,
           "widthComment": 60,
           "color": "#2196F3"
@@ -878,7 +878,7 @@
           "active": false,
           "left": 8.8895,
           "top": 710.1103,
-          "zIndex": 33,
+          "zIndex": 5,
           "widthName": 114.96923828125,
           "widthComment": 60,
           "color": "#2196F3"
@@ -1010,7 +1010,7 @@
           "active": false,
           "left": 716.6665,
           "top": 592.3336,
-          "zIndex": 34,
+          "zIndex": 6,
           "widthName": 162.62744140625,
           "widthComment": 67,
           "color": "#2196F3"
