@@ -45,7 +45,7 @@ namespace LSGames.Common.Api.Services
             return new GetNewsResponseServiceModel()
             {
                 NewsList = newsList,
-                TotalPages = totalNews
+                TotalPages = (int) Math.Ceiling((double)totalNews / rowPerPage),
             };
         }
 

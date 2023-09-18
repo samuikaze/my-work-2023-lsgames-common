@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -318,
-    "scrollLeft": -35,
+    "scrollTop": -282,
+    "scrollLeft": -4,
     "zoomLevel": 0.9,
     "show": {
       "tableComment": true,
@@ -19,7 +19,7 @@
     },
     "database": "MariaDB",
     "databaseName": "lsgames_commons",
-    "canvasType": "@vuerd/builtin-sql-ddl",
+    "canvasType": "ERD",
     "language": "GraphQL",
     "tableCase": "pascalCase",
     "columnCase": "camelCase",
@@ -1017,6 +1017,184 @@
         },
         "visible": true,
         "id": "039265bb-ef28-4de7-9410-86ba444c3794"
+      },
+      {
+        "name": "faqs",
+        "comment": "常見問題",
+        "columns": [
+          {
+            "name": "faq_id",
+            "comment": "常見問題 PK",
+            "dataType": "BIGINT(11)",
+            "default": "",
+            "option": {
+              "autoIncrement": true,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 73.14453125,
+              "widthDataType": 68.1552734375,
+              "widthDefault": 60
+            },
+            "id": "dfbc02c2-8624-4baf-9ef2-75c2e95bfdf5"
+          },
+          {
+            "name": "faq_question",
+            "comment": "常見問題-問題",
+            "dataType": "VARCHAR(128)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 81.11083984375,
+              "widthComment": 85.611328125,
+              "widthDataType": 93.93310546875,
+              "widthDefault": 60
+            },
+            "id": "573d3395-5cff-4bb4-815e-ef22170c7e56"
+          },
+          {
+            "name": "faq_answer",
+            "comment": "常見問題-解答",
+            "dataType": "VARCHAR(1024)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 70.630859375,
+              "widthComment": 85.611328125,
+              "widthDataType": 101.4677734375,
+              "widthDefault": 60
+            },
+            "id": "1a65c76b-623a-41a2-a4bf-914ff74144b1"
+          },
+          {
+            "name": "created_at",
+            "comment": "建立時間",
+            "dataType": "DATETIME",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 65.39404296875,
+              "widthComment": 60,
+              "widthDataType": 64.60693359375,
+              "widthDefault": 60
+            },
+            "id": "a29b9ee9-afcc-416e-b677-2d221b4cc66c"
+          },
+          {
+            "name": "created_user_id",
+            "comment": "建立使用者帳號 PK",
+            "dataType": "BIGINT(11)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 96.9990234375,
+              "widthComment": 112.14453125,
+              "widthDataType": 68.1552734375,
+              "widthDefault": 60
+            },
+            "id": "369e569d-1896-48ed-9f91-ad150b864571"
+          },
+          {
+            "name": "updated_at",
+            "comment": "最後更新時間",
+            "dataType": "DATETIME",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 71.31640625,
+              "widthComment": 80,
+              "widthDataType": 64.60693359375,
+              "widthDefault": 60
+            },
+            "id": "4b50c1a9-d1c9-47bd-8508-ede29d5bb20c"
+          },
+          {
+            "name": "updated_user_id",
+            "comment": "最後更新使用者帳號 PK",
+            "dataType": "BIGINT(11)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 102.92138671875,
+              "widthComment": 120,
+              "widthDataType": 68.1552734375,
+              "widthDefault": 60
+            },
+            "id": "dd1ce45d-7ee9-4605-82fb-709a9c4204e8"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 677.2217,
+          "top": 841.3334,
+          "zIndex": 27,
+          "widthName": 60,
+          "widthComment": 60,
+          "color": "#8BC34A"
+        },
+        "visible": true,
+        "id": "d2dd3d96-a535-45e9-a6c4-0783bb85da33"
       }
     ],
     "indexes": []

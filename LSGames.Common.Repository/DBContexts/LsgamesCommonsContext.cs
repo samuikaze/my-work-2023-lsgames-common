@@ -12,6 +12,8 @@ public partial class LsgamesCommonsContext : DbContext
     {
     }
 
+    public virtual DbSet<Faq> Faqs { get; set; }
+
     public virtual DbSet<News> News { get; set; }
 
     public virtual DbSet<NewsType> NewsTypes { get; set; }
@@ -29,6 +31,42 @@ public partial class LsgamesCommonsContext : DbContext
         modelBuilder
             .UseCollation("utf8mb4_general_ci")
             .HasCharSet("utf8mb4");
+
+        modelBuilder.Entity<Faq>(entity =>
+        {
+            entity.HasKey(e => e.FaqId).HasName("PRIMARY");
+
+            entity.ToTable("faqs", tb => tb.HasComment("常見問題"));
+
+            entity.Property(e => e.FaqId)
+                .HasComment("常見問題 PK")
+                .HasColumnType("bigint(11)")
+                .HasColumnName("faq_id");
+            entity.Property(e => e.CreatedAt)
+                .HasComment("建立時間")
+                .HasColumnType("datetime")
+                .HasColumnName("created_at");
+            entity.Property(e => e.CreatedUserId)
+                .HasComment("建立使用者帳號 PK")
+                .HasColumnType("bigint(11)")
+                .HasColumnName("created_user_id");
+            entity.Property(e => e.FaqAnswer)
+                .HasMaxLength(1024)
+                .HasComment("常見問題-解答")
+                .HasColumnName("faq_answer");
+            entity.Property(e => e.FaqQuestion)
+                .HasMaxLength(128)
+                .HasComment("常見問題-問題")
+                .HasColumnName("faq_question");
+            entity.Property(e => e.UpdatedAt)
+                .HasComment("最後更新時間")
+                .HasColumnType("datetime")
+                .HasColumnName("updated_at");
+            entity.Property(e => e.UpdatedUserId)
+                .HasComment("最後更新使用者帳號 PK")
+                .HasColumnType("bigint(11)")
+                .HasColumnName("updated_user_id");
+        });
 
         modelBuilder.Entity<News>(entity =>
         {
