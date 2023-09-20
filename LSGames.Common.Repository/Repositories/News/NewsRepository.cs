@@ -29,6 +29,7 @@ namespace LSGames.Common.Repository.Repositories.News
                 .Where(news => news.DeletedAt == null)
                 .Skip(skip)
                 .Take(rowPerPage)
+                .OrderByDescending(news => news.CreatedAt)
                 .ToListAsync();
         }
 
