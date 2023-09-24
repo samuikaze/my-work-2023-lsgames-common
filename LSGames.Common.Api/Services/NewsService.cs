@@ -80,8 +80,8 @@ namespace LSGames.Common.Api.Services
         /// <returns></returns>
         public async Task<int> CreateNews(NewsServiceModel request)
         {
-            request.CreatedAt = DateTime.Now;
-            request.UpdatedAt = DateTime.Now;
+            request.CreatedAt = DateTime.UtcNow;
+            request.UpdatedAt = DateTime.UtcNow;
             request.DeletedUserId = null;
             request.DeletedAt = null;
             var news = _mapper.Map<Repository.Models.News>(request);
@@ -102,7 +102,7 @@ namespace LSGames.Common.Api.Services
             news.NewsTitle = request.NewsTitle;
             news.NewsContent = request.NewsContent;
             news.UpdatedUserId = request.UpdatedUserId;
-            news.UpdatedAt = DateTime.Now;
+            news.UpdatedAt = DateTime.UtcNow;
 
             return await _newsRepository.UpdateAsync(news);
         }
@@ -116,7 +116,7 @@ namespace LSGames.Common.Api.Services
         {
             var news = await _newsRepository.GetNews(request.NewsId);
             news.DeletedUserId = request.DeletedUserId;
-            news.DeletedAt = DateTime.Now;
+            news.DeletedAt = DateTime.UtcNow;
 
             return await _newsRepository.UpdateAsync(news);
         }

@@ -51,9 +51,9 @@ namespace LSGames.Common.Api.Services
         public async Task<int> CreateFaq(long userId, FaqServiceModel request)
         {
 
-            request.CreatedAt = DateTime.Now;
+            request.CreatedAt = DateTime.UtcNow;
             request.CreatedUserId = userId;
-            request.UpdatedAt = DateTime.Now;
+            request.UpdatedAt = DateTime.UtcNow;
             request.UpdatedUserId = userId;
             var faq = _mapper.Map<Repository.Models.Faq>(request);
 
@@ -72,7 +72,7 @@ namespace LSGames.Common.Api.Services
             faq.FaqQuestion = request.FaqQuestion;
             faq.FaqAnswer = request.FaqAnswer;
             faq.UpdatedUserId = userId;
-            faq.UpdatedAt = DateTime.Now;
+            faq.UpdatedAt = DateTime.UtcNow;
 
             return await _faqRepository.UpdateAsync(faq);
         }

@@ -12,6 +12,8 @@ public partial class LsgamesCommonsContext : DbContext
     {
     }
 
+    public virtual DbSet<Carousel> Carousels { get; set; }
+
     public virtual DbSet<Faq> Faqs { get; set; }
 
     public virtual DbSet<News> News { get; set; }
@@ -31,6 +33,50 @@ public partial class LsgamesCommonsContext : DbContext
         modelBuilder
             .UseCollation("utf8mb4_general_ci")
             .HasCharSet("utf8mb4");
+
+        modelBuilder.Entity<Carousel>(entity =>
+        {
+            entity.HasKey(e => e.CarouselId).HasName("PRIMARY");
+
+            entity.ToTable("carousels", tb => tb.HasComment("圖片輪播"));
+
+            entity.Property(e => e.CarouselId)
+                .HasComment("圖片輪播 PK")
+                .HasColumnType("bigint(11)")
+                .HasColumnName("carousel_id");
+            entity.Property(e => e.CarouselImagePath)
+                .HasMaxLength(1024)
+                .HasComment("圖片路徑")
+                .HasColumnName("carousel_image_path");
+            entity.Property(e => e.CarouselTitle)
+                .HasMaxLength(120)
+                .HasComment("圖片輪播標題")
+                .HasColumnName("carousel_title");
+            entity.Property(e => e.CreatedAt)
+                .HasComment("建立時間")
+                .HasColumnType("datetime")
+                .HasColumnName("created_at");
+            entity.Property(e => e.CreatedUserId)
+                .HasComment("建立使用者帳號 PK")
+                .HasColumnType("bigint(11)")
+                .HasColumnName("created_user_id");
+            entity.Property(e => e.Description)
+                .HasMaxLength(1024)
+                .HasComment("圖片描述")
+                .HasColumnName("description");
+            entity.Property(e => e.Link)
+                .HasMaxLength(512)
+                .HasComment("連結")
+                .HasColumnName("link");
+            entity.Property(e => e.UpdatedAt)
+                .HasComment("最後更新時間")
+                .HasColumnType("datetime")
+                .HasColumnName("updated_at");
+            entity.Property(e => e.UpdatedUserId)
+                .HasComment("最後更新使用者帳號 PK")
+                .HasColumnType("bigint(11)")
+                .HasColumnName("updated_user_id");
+        });
 
         modelBuilder.Entity<Faq>(entity =>
         {
