@@ -77,6 +77,130 @@ namespace LSGames.Common.Api.Services
         }
 
         /// <summary>
+        /// 新增作品平台
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        public async Task<ProductPlatformServiceModel> CreateProductPlatform(ProductPlatformServiceModel request)
+        {
+            var productPlatform = _mapper.Map<ProductPlatform>(request);
+            productPlatform.CreatedAt = DateTime.UtcNow;
+            productPlatform.UpdatedAt = DateTime.UtcNow;
+
+            await _productPlatformRepository.CreateAsync(productPlatform);
+
+            return _mapper.Map<ProductPlatformServiceModel>(productPlatform);
+        }
+
+        /// <summary>
+        /// 更新作品平台
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        /// <exception cref="NullReferenceException"></exception>
+        public async Task<ProductPlatformServiceModel> UpdateProductPlatform(ProductPlatformServiceModel request)
+        {
+            var productPlatform = await _productPlatformRepository.GetProductPlatformById(request.ProductPlatformId);
+
+            if (productPlatform == null)
+            {
+                throw new NullReferenceException("找不到該作品平台");
+            }
+
+            productPlatform.ProductPlatformName = request.ProductPlatformName;
+            productPlatform.UpdatedAt = DateTime.UtcNow;
+
+            await _productPlatformRepository.UpdateAsync(productPlatform);
+
+            return _mapper.Map<ProductPlatformServiceModel>(productPlatform);
+        }
+
+        /// <summary>
+        /// 刪除作品平台
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        /// <exception cref="NullReferenceException"></exception>
+        public async Task<int> DeleteProductPlatform(ProductPlatformServiceModel request)
+        {
+            var productPlatform = await _productPlatformRepository.GetProductPlatformById(request.ProductPlatformId);
+
+            if (productPlatform == null)
+            {
+                throw new NullReferenceException("找不到該作品平台");
+            }
+
+            return await _productPlatformRepository.DeleteAsync(productPlatform);
+        }
+
+        /// <summary>
+        /// 取得作品分類清單
+        /// </summary>
+        /// <returns></returns>
+        public async Task<List<ProductTypeServiceModel>> GetProductTypes()
+        {
+            return _mapper.Map<List<ProductTypeServiceModel>>(
+                await _productTypeRepository.GetAsync());
+        }
+
+        /// <summary>
+        /// 新增作品分類
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        public async Task<ProductTypeServiceModel> CreateProductType(ProductTypeServiceModel request)
+        {
+            var productType = _mapper.Map<ProductType>(request);
+            productType.CreatedAt = DateTime.UtcNow;
+            productType.UpdatedAt = DateTime.UtcNow;
+
+            await _productTypeRepository.CreateAsync(productType);
+
+            return _mapper.Map<ProductTypeServiceModel>(productType);
+        }
+
+        /// <summary>
+        /// 更新作品分類
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        /// <exception cref="NullReferenceException"></exception>
+        public async Task<ProductTypeServiceModel> UpdateProductType(ProductTypeServiceModel request)
+        {
+            var productType = await _productTypeRepository.GetProductTypeById(request.ProductTypeId);
+
+            if (productType == null)
+            {
+                throw new NullReferenceException("找不到該作品分類");
+            }
+
+            productType.ProductTypeName = request.ProductTypeName;
+            productType.UpdatedAt = DateTime.UtcNow;
+
+            await _productTypeRepository.UpdateAsync(productType);
+
+            return _mapper.Map<ProductTypeServiceModel>(productType);
+        }
+
+        /// <summary>
+        /// 刪除作品分類
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        /// <exception cref="NullReferenceException"></exception>
+        public async Task<int> DeleteProductType(ProductTypeServiceModel request)
+        {
+            var productType = await _productTypeRepository.GetProductTypeById(request.ProductTypeId);
+
+            if (productType == null)
+            {
+                throw new NullReferenceException("找不到該作品分類");
+            }
+
+            return await _productTypeRepository.DeleteAsync(productType);
+        }
+
+        /// <summary>
         /// 新增作品
         /// </summary>
         /// <param name="request"></param>
@@ -90,16 +214,6 @@ namespace LSGames.Common.Api.Services
             await _productRepository.CreateAsync(product);
 
             return true;
-        }
-
-        /// <summary>
-        /// 取得作品分類清單
-        /// </summary>
-        /// <returns></returns>
-        public async Task<List<ProductTypeServiceModel>> GetProductTypes()
-        {
-            return _mapper.Map<List<ProductTypeServiceModel>>(
-                await _productTypeRepository.GetAsync());
         }
 
         /// <summary>
