@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -282,
-    "scrollLeft": -4,
+    "scrollTop": -166,
+    "scrollLeft": 0,
     "zoomLevel": 0.9,
     "show": {
       "tableComment": true,
@@ -19,7 +19,7 @@
     },
     "database": "MariaDB",
     "databaseName": "lsgames_commons",
-    "canvasType": "ERD",
+    "canvasType": "@vuerd/builtin-sql-ddl",
     "language": "GraphQL",
     "tableCase": "pascalCase",
     "columnCase": "camelCase",
@@ -767,9 +767,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 688,
-          "top": 379,
-          "zIndex": 3,
+          "left": 661.3337,
+          "top": 402.3334,
+          "zIndex": 10,
           "widthName": 89.166015625,
           "widthComment": 60,
           "color": "#2196F3"
@@ -1008,9 +1008,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 716.6665,
+          "left": 670.0001,
           "top": 592.3336,
-          "zIndex": 6,
+          "zIndex": 8,
           "widthName": 162.62744140625,
           "widthComment": 67,
           "color": "#2196F3"
@@ -1186,15 +1186,239 @@
         ],
         "ui": {
           "active": false,
-          "left": 677.2217,
-          "top": 841.3334,
-          "zIndex": 27,
+          "left": 595.0001,
+          "top": 838.0001,
+          "zIndex": 11,
           "widthName": 60,
           "widthComment": 60,
           "color": "#8BC34A"
         },
         "visible": true,
         "id": "d2dd3d96-a535-45e9-a6c4-0783bb85da33"
+      },
+      {
+        "name": "carousels",
+        "comment": "圖片輪播",
+        "columns": [
+          {
+            "name": "carousel_id",
+            "comment": "圖片輪播 PK",
+            "dataType": "BIGINT(11)",
+            "default": "",
+            "option": {
+              "autoIncrement": true,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 70.40869140625,
+              "widthComment": 73.14453125,
+              "widthDataType": 68.1552734375,
+              "widthDefault": 60
+            },
+            "id": "f320569c-fa9c-4db6-9d96-e5c6ae7c4ea9"
+          },
+          {
+            "name": "carousel_title",
+            "comment": "圖片輪播標題",
+            "dataType": "VARCHAR(120)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 82.2978515625,
+              "widthComment": 80,
+              "widthDataType": 93.93310546875,
+              "widthDefault": 60
+            },
+            "id": "8d9231fd-c6c8-40b5-b621-2016c199f5b5"
+          },
+          {
+            "name": "carousel_image_path",
+            "comment": "圖片路徑",
+            "dataType": "VARCHAR(1024)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 130.501953125,
+              "widthComment": 60,
+              "widthDataType": 101.4677734375,
+              "widthDefault": 60
+            },
+            "id": "abf2a922-7a00-4027-b11e-74a9f08140fe"
+          },
+          {
+            "name": "description",
+            "comment": "圖片描述",
+            "dataType": "VARCHAR(1024)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 70.58642578125,
+              "widthComment": 60,
+              "widthDataType": 101.4677734375,
+              "widthDefault": 60
+            },
+            "id": "45c27c61-38f3-4dd6-ac43-1d6db3e23b47"
+          },
+          {
+            "name": "link",
+            "comment": "連結",
+            "dataType": "VARCHAR(512)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 93.93310546875,
+              "widthDefault": 60
+            },
+            "id": "463ca09a-7e05-4838-bc11-5e1217275f12"
+          },
+          {
+            "name": "created_user_id",
+            "comment": "建立使用者帳號 PK",
+            "dataType": "BIGINT(11)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 96.9990234375,
+              "widthComment": 112.14453125,
+              "widthDataType": 68.1552734375,
+              "widthDefault": 60
+            },
+            "id": "db94e81c-a79a-4a3a-a442-715f2ec0ed6d"
+          },
+          {
+            "name": "created_at",
+            "comment": "建立時間",
+            "dataType": "DATETIME",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 65.39404296875,
+              "widthComment": 60,
+              "widthDataType": 64.60693359375,
+              "widthDefault": 60
+            },
+            "id": "df50d5d2-8576-464b-8a39-64fedeb8756a"
+          },
+          {
+            "name": "updated_user_id",
+            "comment": "最後更新使用者帳號 PK",
+            "dataType": "BIGINT(11)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 102.92138671875,
+              "widthComment": 120,
+              "widthDataType": 68.1552734375,
+              "widthDefault": 60
+            },
+            "id": "ad94cadd-6565-4319-8ea5-993a82f7fd6e"
+          },
+          {
+            "name": "updated_at",
+            "comment": "最後更新時間",
+            "dataType": "DATETIME",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 71.31640625,
+              "widthComment": 80,
+              "widthDataType": 64.60693359375,
+              "widthDefault": 60
+            },
+            "id": "2d93f590-0d56-4de5-b748-aeffc0c3a007"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 1211.1114,
+          "top": 793.7775,
+          "zIndex": 26,
+          "widthName": 60,
+          "widthComment": 60,
+          "color": "#FF5722"
+        },
+        "visible": true,
+        "id": "a3874f88-8e97-4335-a69a-07d8b3fb6d3c"
       }
     ],
     "indexes": []
@@ -1239,8 +1463,8 @@
           "columnIds": [
             "29559845-c456-446d-ad38-cda6141c1108"
           ],
-          "x": 688,
-          "y": 454.5,
+          "x": 661.3337,
+          "y": 477.8334,
           "direction": "left"
         },
         "end": {
@@ -1274,7 +1498,7 @@
           "columnIds": [
             "b25b7249-24a6-4f29-a73f-31ad436cab2a"
           ],
-          "x": 716.6665,
+          "x": 670.0001,
           "y": 635.2086,
           "direction": "left"
         },
@@ -1300,7 +1524,7 @@
           "columnIds": [
             "6b4ccaa2-380d-4fba-be65-044267503563"
           ],
-          "x": 716.6665,
+          "x": 670.0001,
           "y": 720.9586,
           "direction": "left"
         },
