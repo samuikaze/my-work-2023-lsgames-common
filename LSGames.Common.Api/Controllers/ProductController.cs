@@ -53,6 +53,62 @@ namespace LSGames.Common.Api.Controllers
         }
 
         /// <summary>
+        /// 新增作品平台
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        [HttpPost("platform")]
+        [TypeFilter(typeof(VerifyAccessTokenAuthorizeAttribute))]
+        public async Task<ProductPlatformViewModel> CreateProductPlatform([FromBody] ProductPlatformViewModel request)
+        {
+            return _mapper.Map<ProductPlatformViewModel>(
+                await _productService.CreateProductPlatform(
+                    _mapper.Map<ProductPlatformServiceModel>(request)));
+        }
+
+        /// <summary>
+        /// 更新作品平台
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        [HttpPatch("platform")]
+        [TypeFilter(typeof(VerifyAccessTokenAuthorizeAttribute))]
+        public async Task<ActionResult<ProductPlatformViewModel>> UpdateProductPlatform([FromBody] ProductPlatformViewModel request)
+        {
+            try
+            {
+                return Ok(_mapper.Map<ProductPlatformViewModel>(
+                    await _productService.UpdateProductPlatform(
+                        _mapper.Map<ProductPlatformServiceModel>(request))));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// 刪除作品平台
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        [HttpDelete("platform")]
+        [TypeFilter(typeof(VerifyAccessTokenAuthorizeAttribute))]
+        public async Task<ActionResult<int>> DeleteProductPlatform([FromBody] ProductPlatformViewModel request)
+        {
+            try
+            {
+                return Ok(
+                    await _productService.DeleteProductPlatform(
+                        _mapper.Map<ProductPlatformServiceModel>(request)));
+            }
+            catch (NullReferenceException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        /// <summary>
         /// 新增作品
         /// </summary>
         /// <param name="request"></param>
@@ -74,6 +130,61 @@ namespace LSGames.Common.Api.Controllers
         {
             return _mapper.Map<List<ProductTypeViewModel>>(
                 await _productService.GetProductTypes());
+        }
+
+        /// <summary>
+        /// 新增作品分類
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        [HttpPost("type")]
+        [TypeFilter(typeof(VerifyAccessTokenAuthorizeAttribute))]
+        public async Task<ProductTypeViewModel> CreateProductType([FromBody] ProductTypeViewModel request)
+        {
+            return _mapper.Map<ProductTypeViewModel>(
+                await _productService.CreateProductType(
+                    _mapper.Map<ProductTypeServiceModel>(request)));
+        }
+
+        /// <summary>
+        /// 更新作品分類
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        [HttpPatch("type")]
+        [TypeFilter(typeof(VerifyAccessTokenAuthorizeAttribute))]
+        public async Task<ActionResult<ProductTypeViewModel>> UpdateProductType([FromBody] ProductTypeViewModel request)
+        {
+            try
+            {
+                return Ok(_mapper.Map<ProductTypeViewModel>(
+                    await _productService.UpdateProductType(
+                        _mapper.Map<ProductTypeServiceModel>(request))));
+            }
+            catch (NullReferenceException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// 刪除作品分類
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        [HttpDelete("type")]
+        [TypeFilter(typeof(VerifyAccessTokenAuthorizeAttribute))]
+        public async Task<ActionResult<int>> DeleteProdcutType([FromBody] ProductTypeViewModel request)
+        {
+            try
+            {
+                return Ok(await _productService.DeleteProductType(
+                    _mapper.Map<ProductTypeServiceModel>(request)));
+            }
+            catch (NullReferenceException ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         /// <summary>
