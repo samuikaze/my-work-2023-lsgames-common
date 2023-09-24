@@ -1,4 +1,5 @@
 using LSGames.Common.Api.Services;
+using LSGames.Common.Repository.Repositories.Carousel;
 using LSGames.Common.Repository.Repositories.Faq;
 using LSGames.Common.Repository.Repositories.News;
 using LSGames.Common.Repository.Repositories.Product;
@@ -15,6 +16,7 @@ namespace LSGames.Common.Api.Extensions
                 serviceCollection.AddScoped<INewsService, NewsService>();
                 serviceCollection.AddScoped<IProductService, ProductService>();
                 serviceCollection.AddScoped<IFaqService, FaqService>();
+                serviceCollection.AddScoped<ICarouselService, CarouselService>();
 
                 // Repositories
                 serviceCollection.AddScoped<INewsRepository, NewsRepository>();
@@ -24,6 +26,7 @@ namespace LSGames.Common.Api.Extensions
                 serviceCollection.AddScoped<IProductPlatformRepository, ProductPlatformRepository>();
                 serviceCollection.AddScoped<IProductPlatformMapperRepository, ProductPlatformMapperRepository>();
                 serviceCollection.AddScoped<IFaqRepository, FaqRepository>();
+                serviceCollection.AddScoped<ICarouselRepository, CarouselRepository>();
             }
 
             return serviceCollection;
